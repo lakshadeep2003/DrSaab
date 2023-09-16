@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!--    &lt;!&ndash;Spinner&ndash;&gt;-->
+    <!--    <string name="station_1">Malad</string>-->
+    <!--    <string name="station_2">Kandivali</string>-->
+    <!--    <string name="station_3">Borivali</string>-->
+</resources>
