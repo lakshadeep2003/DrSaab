@@ -29,40 +29,36 @@
             android:layout_weight="1"
             android:text="Date:"/>
 
-        <EditText
+        <TextView
             android:id="@+id/date"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_weight="4"
+            android:gravity="center"
+            android:textSize="25sp"
             android:background="@drawable/input_bg2"
             android:backgroundTint="@color/Time"
-            android:focusableInTouchMode="false"
+            android:layout_gravity="center_horizontal"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="250dp"
         android:id="@+id/recycler_view"
         android:layout_below="@+id/time_layout"
         tools:listitem="@layout/item_slot"
         app:spanCount="3"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
-<!--    <TimePicker-->
-<!--        android:id="@+id/time"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/text"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:text="Time"-->
-<!--        android:textSize="25sp"-->
-<!--        android:paddingTop="10dp"-->
-<!--        android:textAlignment="center"-->
-<!--        android:gravity="center_horizontal" />-->
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/recycler_view"
+        android:background="@drawable/round_btn"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:text="Submit"/>
 
 </RelativeLayout>

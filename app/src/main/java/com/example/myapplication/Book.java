@@ -7,23 +7,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class Book extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class Book extends AppCompatActivity{
 
     TextView Date;
-//    TimePicker Time;
-//    private TextView textView;
+    Button Submit;
+    int year,month,day;
 
     RecyclerView recyclerView;
     ArrayList<String> sectionList = new ArrayList<>();
@@ -35,12 +38,11 @@ public class Book extends AppCompatActivity implements DatePickerDialog.OnDateSe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
         Date = findViewById(R.id.date);
-//        Time = findViewById(R.id.time);
-//        textView = findViewById(R.id.text);
-
+        Calendar calendar = Calendar.getInstance();
         recyclerView  = findViewById(R.id.recycler_view);
+        Submit = findViewById(R.id.submit);
 
-        sectionList.add("Doctor Time");
+        sectionList.add("Doctor Available Time:-");
 
         ArrayList<String> arrayList = new ArrayList<>();
 
@@ -63,71 +65,38 @@ public class Book extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
         recyclerView.setLayoutManager(manager);
 
-//        adapter.setLayoutManager(manager);
+        adapter.setLayoutManager(manager);
 
         adapter.shouldShowHeadersForEmptySections(false);
+
+        recyclerView.setAdapter(adapter);
 
 
 
         Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment datePicker = new DatePickerFragment();
-                datePicker.show(getSupportFragmentManager(), "date picker");
+                year = calendar.get(Calendar.YEAR);
+                month = calendar.get(Calendar.MONTH);
+                day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Book.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        Date.setText(i+"/"+i1+"/"+ i2);
+                    }
+                },year,month,day);
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+                datePickerDialog.show();
             }
         });
 
-//        Time.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                openDatePicker(); // Open date picker dialog
-//
-//                openTimePicker(); //Open time picker dialog
-//            }
-//        });
+        Submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Book.this, Pat_details.class);
+                startActivity(intent);
+            }
+        });
     }
-
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, year);
-        c.set(Calendar.MONTH, month);
-        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(currentDateString);
-    }
-
-//    private void openDatePicker(){
-//        DatePickerDialog datePickerDialog = new DatePickerDialog(this, R.style.DialogTheme , new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-//
-//                //Showing the picked value in the textView
-//                textView.setText(String.valueOf(year)+ "."+String.valueOf(month)+ "."+String.valueOf(day));
-//
-//            }
-//        }, 2023, 01, 20);
-//
-//        datePickerDialog.show();
-//    }
-//
-//
-//    private void openTimePicker(){
-//
-//        TimePickerDialog timePickerDialog = new TimePickerDialog(this, R.style.DialogTheme, new TimePickerDialog.OnTimeSetListener() {
-//            @Override
-//            public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-//
-//
-//                //Showing the picked value in the textView
-//                textView.setText(String.valueOf(hour)+ ":"+String.valueOf(minute));
-//
-//            }
-//        }, 15, 30, false);
-//
-//        timePickerDialog.show();
-//    }
 }
