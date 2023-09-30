@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".select"
+    android:background="@color/light_green">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A6000000" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="47dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/book_details"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/dr_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/name_dr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/dr_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:gravity="end"
+            android:text="Karan"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dr_address"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/dr_name">
+
+        <TextView
+            android:id="@+id/add_dr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/dr_add"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="end"
+            android:text="Shanti Nagar, Ramesh Garden,Borivali(east)"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pat_no"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/dr_address">
+
+        <TextView
+            android:id="@+id/no_pat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/pat_num"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:gravity="end"
+            android:text="8652691866"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dr_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/pat_no">
+
+        <TextView
+            android:id="@+id/time_dr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/time"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:gravity="end"
+            android:text="6:00 PM"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pat_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/dr_time">
+
+        <TextView
+            android:id="@+id/name_pat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/pat_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_pat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:gravity="end"
+            android:text="Lakshadeep"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dr_date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/pat_name">
+
+        <TextView
+            android:id="@+id/date_dr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/Date2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:gravity="end"
+            android:text="2023/8/23"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dr_charge"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/dr_date">
+
+        <TextView
+            android:id="@+id/charge_dr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/charge"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/input_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:gravity="end"
+            android:text="Fee Rs.1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnpay"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/input_bg"
+                android:text="@string/pay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/dr_charge"
+                app:layout_constraintStart_toStartOf="@+id/dr_charge"
+                app:layout_constraintTop_toBottomOf="@+id/dr_charge"
+                tools:ignore="TextSizeCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

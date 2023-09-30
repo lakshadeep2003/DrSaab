@@ -1,8 +1,82 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Dr.Saab</string>
+    <string name="language">Select a language</string>
+    <string name="city">Select a city</string>
+    <string name="login">Login</string>
+    <string name="lang">Language</string>
+    <string name="book">Book</string>
+    <string name="Time">Schedule Timings</string>
+    <string name="Date">Date:</string>
+    <string name="Date2">Date</string>
+    <string name="submit">Submit</string>
+    <string name="pat_details">Patient Details</string>
+    <string name="name">Name</string>
+    <string name="mobile">Phone No</string>
+    <string name="otp">OTP</string>
+    <string name="verify">Verify</string>
+    <string name="book_details">Patient Booking Details</string>
+    <string name="dr_name">Dr.name</string>
+    <string name="dr_add">Dr.Address</string>
+    <string name="pat_num">Patient Number</string>
+    <string name="time">Timing</string>
+    <string name="pat_name">Patient Name</string>
+    <string name="charge">Charges</string>
+    <string name="pay">BOOK &amp; Pay</string>
 
-    <!--    &lt;!&ndash;Spinner&ndash;&gt;-->
-    <!--    <string name="station_1">Malad</string>-->
-    <!--    <string name="station_2">Kandivali</string>-->
-    <!--    <string name="station_3">Borivali</string>-->
+    <!--    Station-->
+    <string-array name="station">
+        <item>Malad</item>
+        <item>Kandivali</item>
+        <item>Borivali</item>
+        <item>Dahishar</item>
+    </string-array>
+
+    <!--    Section-->
+    <string-array name="section">
+        <item>Doctor Available Time:-</item>
+    </string-array>
+
+    <!--    Dr1-->
+    <string-array name="Dr1">
+        <item>Karan</item>
+        <item>R.drawable.dr</item>
+        <item>Skin</item>
+        <item>Dr Fee Rs. 500/-</item>
+        <item>Booking Rs. 1/-</item>
+        <item>Tanaji Nagar, Kurar Village,Malad(east)</item>
+    </string-array>
+
+    <!--    Dr2-->
+    <string-array name="Dr2">
+        <item>Sam</item>
+        <item>R.drawable.dr2</item>
+        <item>Pshycologist</item>
+        <item>Dr Fee Rs. 500/-</item>
+        <item>Booking Rs. 1/-</item>
+        <item>Modi Park, Kandivali(west)</item>
+    </string-array>
+
+    <!--    Dr3-->
+    <string-array name="Dr3">
+        <item>jagriti</item>
+        <item>R.drawable.dr3</item>
+        <item>Skin</item>
+        <item>Dr Fee Rs. 500/-</item>
+        <item>Booking Rs. 1/-</item>
+        <item>Shanti Nagar, Ramesh Garden,Borivali(east)</item>
+    </string-array>
+
+    <!--    Time-->
+    <string-array name="Dr_time">
+        <item>09:00 AM</item>
+        <item>10:00 AM</item>
+        <item>11:00 AM</item>
+        <item>12:00 PM</item>
+        <item>01:00 PM</item>
+        <item>02:00 PM</item>
+        <item>03:00 PM</item>
+        <item>04:00 PM</item>
+        <item>05:00 PM</item>
+        <item>06:00 PM</item>
+    </string-array>
 </resources>

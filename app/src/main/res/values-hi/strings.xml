@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dr.Saab</string>
+    <string name="language">भाषा चुनें</string>
+    <string name="city">एक शहर चुनें</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="lang">भाषा</string>
+    <string name="book">बुकिंग</string>
+    <string name="Time">समय निर्धारित करें</string>
+    <string name="Date">तारीख:</string>
+    <string name="Date2">तारीख</string>
+    <string name="submit">जमा करना</string>
+    <string name="pat_details">रोगी विवरण</string>
+    <string name="name">नाम</string>
+    <string name="mobile">फोन नंबर</string>
+    <string name="otp">ओ.टी.पी</string>
+    <string name="verify">सत्यापित करें</string>
+    <string name="book_details">रोगी बुकिंग विवरण</string>
+    <string name="dr_name">डॉ.नाम</string>
+    <string name="dr_add">डॉ.पता</string>
+    <string name="pat_num">मरीज़ का फ़ोन नंबर</string>
+    <string name="time">समय</string>
+    <string name="pat_name">रोगी का नाम</string>
+    <string name="charge">शुल्क</string>
+    <string name="pay">बुकिंग और भुगतान</string>
+
+    <!--    Station-->
+    <string-array name="station">
+        <item>मलाड</item>
+        <item>कांदिवली</item>
+        <item>बोरीवली</item>
+        <item>दहिशर</item>
+    </string-array>
+
+    <!--    Section-->
+    <string-array name="section">
+        <item>डॉक्टर उपलब्ध समय:-</item>
+    </string-array>
+
+    <!--    Dr1-->
+    <string-array name="Dr1">
+        <item>करण</item>
+        <item>R.drawable.dr</item>
+        <item>त्वचा</item>
+        <item>डॉक्टर शुल्क रु. 500/-</item>
+        <item>बुकिंग रु. 1/-</item>
+        <item>तानाजी नगर, कुरार गांव, मलाड (पूर्व)</item>
+    </string-array>
+
+    <!--    Dr2-->
+    <string-array name="Dr2">
+        <item>सैम</item>
+        <item>R.drawable.dr2</item>
+        <item>मनोविज्ञानी</item>
+        <item>डॉक्टर शुल्क रु. 500/-</item>
+        <item>बुकिंग रु. 1/-</item>
+        <item>मोदी पार्क, कांदिवली (पश्चिम)</item>
+    </string-array>
+
+    <!--    Dr3-->
+    <string-array name="Dr3">
+        <item>जागृति</item>
+        <item>R.drawable.dr3</item>
+        <item>त्वचा</item>
+        <item>डॉक्टर शुल्क रु. 500/-</item>
+        <item>बुकिंग रु. 1/-</item>
+        <item>शांति नगर, रमेश गार्डन, बोरीवली (पूर्व)</item>
+    </string-array>
+</resources>

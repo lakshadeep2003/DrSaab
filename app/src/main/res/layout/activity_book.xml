@@ -11,31 +11,40 @@
     <TextView
         android:id="@+id/schedule_time"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Schedule Timings"
-        android:textSize="25sp"/>
+        android:layout_height="@dimen/_40sdp"
+        android:text="@string/Time"
+        android:textColor="@color/ColorPurple"
+        android:textSize="@dimen/_20sdp"/>
+
+    <TextView
+        android:id="@+id/check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/schedule_time"
+        android:textSize="@dimen/_12sdp"/>
 
     <LinearLayout
         android:id="@+id/time_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:layout_below="@+id/schedule_time"
+        android:layout_below="@+id/check"
         android:weightSum="5">
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_weight="1"
-            android:text="Date:"/>
+            android:text="@string/Date"/>
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_weight="4"
             android:gravity="center"
-            android:textSize="25sp"
+            android:textSize="@dimen/_20sdp"
             android:background="@drawable/input_bg2"
             android:backgroundTint="@color/Time"
             android:layout_gravity="center_horizontal"
@@ -44,7 +53,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/_205sdp"
         android:id="@+id/recycler_view"
         android:layout_below="@+id/time_layout"
         tools:listitem="@layout/item_slot"
@@ -53,12 +62,12 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_below="@+id/recycler_view"
         android:background="@drawable/round_btn"
-        android:layout_weight="1"
+        android:backgroundTint="@color/teal_900"
         android:textColor="@color/white"
-        android:text="Submit"/>
+        android:text="@string/submit"/>
 
 </RelativeLayout>

@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Pat_details"
-    android:background="@drawable/bg">
+    android:background="@color/light_green">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <View
         android:layout_width="match_parent"
@@ -27,11 +37,11 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="@dimen/_60sdp"
                 android:fontFamily="@font/aldrich"
-                android:text="Patient Details"
+                android:text="@string/pat_details"
                 android:textColor="@color/white"
-                android:textSize="44sp"
+                android:textSize="@dimen/_34sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,59 +51,115 @@
                 android:id="@+id/inputName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
                 android:background="@drawable/input_bg"
                 android:drawableLeft="@drawable/baseline_person_24"
-                android:drawablePadding="10dp"
+                android:drawablePadding="@dimen/_8sdp"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="@string/name"
                 android:inputType="textEmailAddress"
-                android:paddingLeft="20dp"
-                android:paddingTop="13dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="13dp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <EditText
-                android:id="@+id/inputPhone"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/phoneNo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
                 android:background="@drawable/input_bg"
-                android:drawableLeft="@drawable/baseline_phone_24"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Phone No"
-                android:inputType="textPassword"
-                android:paddingLeft="20dp"
-                android:paddingTop="13dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="13dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputName"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/inputName"
-                app:layout_constraintTop_toBottomOf="@+id/inputName" />
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/inputName">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/login_countrycode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    app:ccp_contentColor="@color/white"
+                    app:ccp_showFlag="false"
+                    app:ccp_clickable="false"
+                    app:ccpDialog_showPhoneCode="false"
+                    android:background="@drawable/input_bg"
+                    app:ccp_showNameCode="false" />
+
+                <EditText
+                    android:id="@+id/login_mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/input_bg"
+                    android:elevation="5dp"
+                    android:hint="@string/mobile"
+                    android:maxLength="11"
+                    android:inputType="phone"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+            </LinearLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/inputPhone"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_100sdp"-->
+<!--                android:background="@drawable/input_bg"-->
+<!--                android:drawableLeft="@drawable/baseline_phone_24"-->
+<!--                android:drawablePadding="@dimen/_8sdp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Phone No"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="10"-->
+<!--                android:paddingLeft="@dimen/_10sdp"-->
+<!--                android:paddingTop="@dimen/_10sdp"-->
+<!--                android:paddingRight="@dimen/_10sdp"-->
+<!--                android:paddingBottom="@dimen/_10sdp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@color/white"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/inputName"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/inputName"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/inputName" />-->
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/send_otp_btn"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_25sdp"
                 android:background="@drawable/input_bg"
-                android:text="Submit"
+                android:text="@string/submit"
+                android:textSize="@dimen/_15sdp"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputPhone"
-                app:layout_constraintStart_toStartOf="@+id/inputPhone"
-                app:layout_constraintTop_toBottomOf="@+id/inputPhone"
-                tools:ignore="TextSizeCheck" />
+                app:layout_constraintEnd_toEndOf="@+id/phoneNo"
+                app:layout_constraintStart_toStartOf="@+id/phoneNo"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNo"
+                tools:ignore="TextSizeCheck"/>
+
+            <ProgressBar
+                android:id="@+id/login_progress_bar"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_200sdp"
+                android:indeterminateTint="@color/ColorPurple"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/send_otp_btn"
+                app:layout_constraintStart_toStartOf="@+id/send_otp_btn"
+                app:layout_constraintTop_toBottomOf="@+id/send_otp_btn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

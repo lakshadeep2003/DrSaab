@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Otp"
-    android:background="@drawable/bg">
+    android:background="@color/light_green">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <View
         android:layout_width="match_parent"
@@ -16,8 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="47dp">
+        tools:layout_editor_absoluteX="-344dp"
+        tools:layout_editor_absoluteY="404dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,11 +37,11 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="@dimen/_80sdp"
                 android:fontFamily="@font/aldrich"
-                android:text="Patient Details"
+                android:text="@string/pat_details"
                 android:textColor="@color/white"
-                android:textSize="44sp"
+                android:textSize="@dimen/_34sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,20 +49,20 @@
 
 
             <EditText
-                android:id="@+id/inputPhone"
+                android:id="@+id/login_otp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/_24sdp"
                 android:background="@drawable/input_bg"
                 android:drawableLeft="@drawable/baseline_phone_24"
-                android:drawablePadding="10dp"
+                android:drawablePadding="@dimen/_8sdp"
                 android:ems="10"
-                android:hint="OTP"
-                android:inputType="textPassword"
-                android:paddingLeft="20dp"
-                android:paddingTop="13dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="13dp"
+                android:hint="@string/otp"
+                android:inputType="number"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -61,17 +71,45 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <Button
-                android:id="@+id/verify"
+                android:id="@+id/login_next_btn"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_40sdp"
                 android:background="@drawable/input_bg"
-                android:text="Verify"
+                android:text="@string/verify"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputPhone"
-                app:layout_constraintStart_toStartOf="@+id/inputPhone"
-                app:layout_constraintTop_toBottomOf="@+id/inputPhone"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="@+id/login_otp"
+                app:layout_constraintStart_toStartOf="@+id/login_otp"
+                app:layout_constraintTop_toBottomOf="@+id/login_otp"
                 tools:ignore="TextSizeCheck" />
+
+            <ProgressBar
+                android:id="@+id/login_progress_bar"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:indeterminateTint="@color/ColorPurple"
+                app:layout_constraintEnd_toEndOf="@+id/login_next_btn"
+                app:layout_constraintStart_toStartOf="@+id/login_next_btn"
+                app:layout_constraintTop_toBottomOf="@+id/login_next_btn" />
+
+            <TextView
+                android:id="@+id/resend_otp_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_170sdp"
+                android:layout_weight="10"
+                android:gravity="center"
+                android:text="Resend OTP"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/login_next_btn"
+                app:layout_constraintStart_toStartOf="@+id/login_next_btn"
+                app:layout_constraintTop_toBottomOf="@+id/login_progress_bar"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

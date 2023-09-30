@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -18,29 +18,30 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-/**
- * Created by phoenix on 31/8/17.
- */
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private Activity mContext;
-    private List<Item> itemList;
+    private final Activity mContext;
+    private final List<Item> itemList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, company,pay,booking;
+//    FirebaseDatabase database;
+//    DatabaseReference reference;
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView title, company,pay,booking,location;
         public ImageView photo;
 
         public Button Book_Date;
 
         public MyViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.name);
+            title = (TextView) view.findViewById(R.id.dr_name);
             company = (TextView) view.findViewById(R.id.company);
             pay = (TextView) view.findViewById(R.id.pay);
-            booking = (TextView) view.findViewById(R.id.booking);
+            booking = (TextView) view.findViewById(R.id.dr_charge);
             photo = (ImageView) view.findViewById(R.id.photo);
             Book_Date = (Button) view.findViewById(R.id.book);
+            location = (TextView) view.findViewById(R.id.dr_address);
         }
     }
 
@@ -50,6 +51,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.itemList = itemList;
     }
 
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -65,6 +67,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.company.setText(item.getCompany());
         holder.pay.setText(item.getPay());
         holder.booking.setText(item.getBooking());
+        holder.location.setText(item.getLocation());
 
         holder.Book_Date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +89,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     }
 
+//    private void checkUser() {
+//        database = FirebaseDatabase.getInstance();
+//        reference = database.getReference("users");
+//
+//        String name = title.getText().toString();
+//        String booking = booking.getText().toString();
+//        String location = location.getText().toString();
+//
+//        HelperClass helperClass = new HelperClass(name,booking,location);
+//        reference.child(name).setValue(helperClass);
+//
+//        Toast.makeText(mContext, "You have signup successfully!", Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(mContext, Book.class);
+//        mContext.startActivity(intent);
+//    }
 
     @Override
     public int getItemCount() {

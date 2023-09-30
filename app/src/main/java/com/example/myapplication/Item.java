@@ -10,15 +10,25 @@ public class Item {
 
     private String booking;
 
+    private String location;
+
     public Item() {
-        //Might Need Empty constructor, might not!
     }
-    public Item(String name, int photo, String company, String pay, String booking) {
+    public Item(String name, int photo, String company, String pay, String booking,String location) {
         this.name = name;
         this.photo = photo;
         this.company = company;
         this.pay = pay;
         this.booking = booking;
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getName() {

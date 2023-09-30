@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,10 +18,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        ImageView imageView = findViewById(R.id.splash);
+//        Glide.with(this).load(R.drawable.bg2).into(imageView);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,signin.class);
+                Intent intent = new Intent(MainActivity.this,Language.class);
                 startActivity(intent);
                 finish();
             }

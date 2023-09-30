@@ -20,4 +20,7 @@
     <color name="theme_sec">#FD383F</color>
     <color name="pri_light">#4D313C50</color>
     <color name="orange">#FF5722</color>
+
+    <color name="light_green">#CBDDD1</color>
+    <color name="teal_900">#77DFC0</color>
 </resources>
