@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +22,8 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private final Activity mContext;
+    private final Context mContext;
     private final List<Item> itemList;
-
-//    FirebaseDatabase database;
-//    DatabaseReference reference;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, company,pay,booking,location;
@@ -78,7 +76,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         });
 
         // loading photo using Glide library
-        Glide.with(mContext).load(item.getPhoto()).into(holder.photo);
+        Glide.with(this.mContext).load(item.getPhoto()).into(holder.photo);
 
         holder.photo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,22 +86,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         });
 
     }
-
-//    private void checkUser() {
-//        database = FirebaseDatabase.getInstance();
-//        reference = database.getReference("users");
-//
-//        String name = title.getText().toString();
-//        String booking = booking.getText().toString();
-//        String location = location.getText().toString();
-//
-//        HelperClass helperClass = new HelperClass(name,booking,location);
-//        reference.child(name).setValue(helperClass);
-//
-//        Toast.makeText(mContext, "You have signup successfully!", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(mContext, Book.class);
-//        mContext.startActivity(intent);
-//    }
 
     @Override
     public int getItemCount() {

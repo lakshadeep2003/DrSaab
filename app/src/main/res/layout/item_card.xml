@@ -37,7 +37,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/dr1"
+                android:src="@drawable/dr"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <LinearLayout

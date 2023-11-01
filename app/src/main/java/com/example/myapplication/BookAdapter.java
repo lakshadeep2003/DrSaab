@@ -2,8 +2,6 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.graphics.Color;
-//import android.support.annotation.NonNull;
-//import android.support.v7.widget.RecyclerView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 
 
 import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter;

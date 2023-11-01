@@ -1,34 +1,17 @@
 package com.example.myapplication;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class AndroidCardview extends AppCompatActivity {
 
-//    FirebaseFirestore db;
 
     ArrayList<Item> itemList;
     @Override
@@ -49,41 +32,6 @@ public class AndroidCardview extends AppCompatActivity {
 
         //set data to recyclerview
         setData();
-
-//      db=FirebaseFirestore.getInstance();
-//        db.collection("Doctors").get()
-//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                        List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
-//                        for(DocumentSnapshot d:list)
-//                        {
-//                            Item obj=d.toObject(Item.class);
-//                            itemList.add(obj);
-//                        }
-//                        adapter.notifyDataSetChanged();
-//                    }
-//                });
-
-//        db.collection("Doctors") // Replace with your Firestore collection name
-//                .add(itemList)
-//                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<DocumentReference> task) {
-//                        if (task.isSuccessful()) {
-//                            // Data added successfully
-//                            DocumentReference documentReference = task.getResult();
-//                            String documentId = documentReference.getId();
-//                            newItem.setId(documentId); // Set the ID of your item for reference if needed
-//                            // Refresh your RecyclerView or update your local data list
-//                        } else {
-//                            // Handle the error
-//                            Exception e = task.getException();
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                });
-
     }
 
     private void setData() {

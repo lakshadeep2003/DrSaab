@@ -140,7 +140,7 @@ public class Otp extends AppCompatActivity {
                 if(timeoutSeconds<=0){
                     timeoutSeconds =60L;
                     timer.cancel();
-                    runOnUiThread(() -> {
+                    runOnUiThread(() ->{
                         resendOtpTextView.setEnabled(true);
                     });
                 }
