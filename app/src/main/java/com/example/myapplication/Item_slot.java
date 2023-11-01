@@ -34,7 +34,7 @@ public class Item_slot extends AppCompatActivity {
     public Boolean validateBook(){
         String Time_layout = Time_slot.getText().toString();
         if (Time_layout.isEmpty()) {
-           Time_layout.setError("Please Check Date and Time");
+//           Time_layout.setError("Please Check Date and Time");
         } else {
             return true;
         }
