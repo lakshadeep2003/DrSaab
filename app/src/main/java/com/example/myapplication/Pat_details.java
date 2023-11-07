@@ -11,6 +11,12 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
 public class Pat_details extends AppCompatActivity {
@@ -18,6 +24,8 @@ public class Pat_details extends AppCompatActivity {
     EditText phoneInput,phoneName;
     Button sendOtpBtn;
     ProgressBar progressBar;
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,7 @@ public class Pat_details extends AppCompatActivity {
 
         countryCodePicker.registerCarrierNumberEditText(phoneInput);
         sendOtpBtn.setOnClickListener((v)->{
+            passUserData();
             if(!validateUsername()){
 
             }else{
@@ -42,10 +51,54 @@ public class Pat_details extends AppCompatActivity {
     }
 
     public void checkUser(){
-        Intent intent = new Intent(Pat_details.this,Otp.class);
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("Patients");
+
+        String phone = phoneInput.getText().toString();
+        String username = phoneName.getText().toString();
+
+        HelperClass helperClass = new HelperClass(username, phone);
+        reference.child(username).setValue(helperClass);
+
+        Toast.makeText(Pat_details.this, "Your Phone No Register Successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Pat_details.this, Book_details.class);
         intent.putExtra("phone",countryCodePicker.getFullNumberWithPlus());
         startActivity(intent);
+//        Intent intent = new Intent(Pat_details.this,Otp.class);
+//        intent.putExtra("phone",countryCodePicker.getFullNumberWithPlus());
+//        startActivity(intent);
     }
+
+    public void passUserData(){
+        String userUsername = phoneName.getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Patients");
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
+
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+
+                    String phoneFromDB = snapshot.child(userUsername).child("phone").getValue(String.class);
+                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+
+                    Intent intent = new Intent(Pat_details.this, Book_details.class);
+
+                    intent.putExtra("phone", phoneFromDB);
+                    intent.putExtra("username", usernameFromDB);
+
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     public Boolean validateUsername(){
         String Name = phoneName.getText().toString();
         String PhoneNo = phoneInput.getText().toString();

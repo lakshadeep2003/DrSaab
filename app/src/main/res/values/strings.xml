@@ -21,7 +21,9 @@
     <string name="time">Timing</string>
     <string name="pat_name">Patient Name</string>
     <string name="charge">Charges</string>
+    <string name="fees">Fee Rs.20</string>
     <string name="pay">BOOK &amp; Pay</string>
+    <string name="phone_no">123456789</string>
 
     <!--    Station-->
     <string-array name="station">

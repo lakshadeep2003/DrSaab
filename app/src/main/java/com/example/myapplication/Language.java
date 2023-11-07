@@ -29,7 +29,7 @@ public class Language extends AppCompatActivity {
         lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Language.this, select.class);
+                Intent intent = new Intent(Language.this, AndroidCardview.class);
                 startActivity(intent);
             }
         });

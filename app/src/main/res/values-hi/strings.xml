@@ -22,7 +22,9 @@
     <string name="time">समय</string>
     <string name="pat_name">रोगी का नाम</string>
     <string name="charge">शुल्क</string>
+    <string name="fees">शुल्क 20.रु</string>
     <string name="pay">बुकिंग और भुगतान</string>
+    <string name="phone_no">१२३४५६७८९</string>
 
     <!--    Station-->
     <string-array name="station">

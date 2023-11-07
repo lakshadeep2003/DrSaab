@@ -23,7 +23,10 @@ public class CustomDatePickerDialog extends DatePickerDialog {
 
                 if (selectedDate.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
                     // If it's a Sunday, reset to the last selected date to prevent selection
-                    getDatePicker().setMinDate(selectedDate.getTimeInMillis() + (1000 * 60 * 60 * 24));
+                    view.updateDate(year, monthOfYear, dayOfMonth - 1);
+//                    getDatePicker().setMinDate(selectedDate.getTimeInMillis() + (1000 * 60 * 60 * 24));
+//                    getDatePicker().setMaxDate(selectedDate.getTimeInMillis() + (1000 * 60 * 60 * 24));
+//                    view.isShown();
 //                    view.updateDate(getDatePicker().getYear(), getDatePicker().getMonth(), getDatePicker().getDayOfMonth());
                 }
             }

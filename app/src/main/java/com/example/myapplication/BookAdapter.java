@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.graphics.Color;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +19,7 @@ import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BookAdapter extends SectionedRecyclerViewAdapter<BookAdapter.ViewHolder>{
+public class BookAdapter extends SectionedRecyclerViewAdapter<BookAdapter.ViewHolder> {
 
     Activity activity;
     ArrayList<String> sectionList;
@@ -70,7 +71,7 @@ public class BookAdapter extends SectionedRecyclerViewAdapter<BookAdapter.ViewHo
             ));
 
             holder.textView.setTextColor(Color.WHITE);
-        }else {
+        }else{
             holder.textView.setBackground(ContextCompat.getDrawable(
                     activity,R.drawable.rectangle_outline
             ));
@@ -102,10 +103,11 @@ public class BookAdapter extends SectionedRecyclerViewAdapter<BookAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView;
+        TextView textView,Check;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            Check = itemView.findViewById(R.id.check);
             textView = itemView.findViewById(R.id.text_view);
         }
     }

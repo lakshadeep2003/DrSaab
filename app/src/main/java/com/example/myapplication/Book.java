@@ -11,12 +11,16 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +34,8 @@ public class Book extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayout linearLayout;
     HashMap<String,ArrayList<String>> itemList = new HashMap<>();
+//    FirebaseDatabase database;
+//    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +46,7 @@ public class Book extends AppCompatActivity {
         Time = findViewById(R.id.schedule_time);
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_WEEK,Calendar.SUNDAY);
-        long minDate = calendar.getTimeInMillis();
+//        long minDate = calendar.getTimeInMillis();
         recyclerView = findViewById(R.id.recycler_view);
         linearLayout = findViewById(R.id.time_layout);
         Submit = findViewById(R.id.submit);
@@ -48,8 +54,17 @@ public class Book extends AppCompatActivity {
         String[] section = getResources().getStringArray(R.array.section);
         ArrayList<String> sectionList = new ArrayList<>(Arrays.asList(section));
 
-        String[] Dr_Time = getResources().getStringArray(R.array.Dr_time);
-        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(Dr_Time));
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("09:00 AM");
+        arrayList.add("10:00 AM");
+        arrayList.add("11:00 AM");
+        arrayList.add("12:00 PM");
+        arrayList.add("01:00 PM");
+        arrayList.add("02:00 PM");
+        arrayList.add("03:00 PM");
+        arrayList.add("04:00 PM");
+        arrayList.add("05:00 PM");
+        arrayList.add("06:00 PM");
 
         itemList.put(sectionList.get(0), arrayList);
 
@@ -92,6 +107,18 @@ public class Book extends AppCompatActivity {
 //                    datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis() + (1000 * 60 * 60 * 24 * 6));
 //                    datePickerDialog.show();
 
+//                    database = FirebaseDatabase.getInstance();
+//                    reference = database.getReference("Patients");
+//
+//                    String date = Date.getText().toString();
+//
+//                    HelperClass helperClass = new HelperClass(date);
+//                    reference.child(date).setValue(helperClass);
+//
+//                    Toast.makeText(Book.this, "Your Date Register Successfully", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(Book.this, Pat_details.class);
+//                    startActivity(intent);
+
                     showCustomDatePickerDialog();
 //                    year = calendar.get(Calendar.YEAR);
 //                    month = calendar.get(Calendar.MONTH);
@@ -111,7 +138,6 @@ public class Book extends AppCompatActivity {
 //                    datePickerDialog.show();
                 }
             });
-
 
 
             Submit.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +165,7 @@ public class Book extends AppCompatActivity {
             }
         }, year, month, day);
         datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis() + (1000 * 60 * 60 * 24));
-        datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis() + (1000 * 60 * 60 * 24 * 7));
+        datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis() + (1000 * 60 * 60 * 24 * 6));
         datePickerDialog.show();
     }
 
@@ -150,7 +176,7 @@ public class Book extends AppCompatActivity {
         public Boolean validateBook(){
             String Time_Slot = itemList.toString();
             String Calendar = Date.getText().toString();
-            String Time_layout = Check.getText().toString();
+//            String Time_layout = Check.getText().toString();
             if (Calendar.isEmpty() | Time_Slot.isEmpty()) {
                 Check.setText("Please Check Date and Time");
             } else {

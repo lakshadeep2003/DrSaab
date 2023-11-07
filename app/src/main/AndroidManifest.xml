@@ -39,14 +39,12 @@
         <activity
             android:name=".select"
             android:exported="false" />
-        <activity
-            android:name=".register"
-            android:exported="false" />
+        <meta-data android:name="com.phonepe.android.sdk.isUAT" android:value="true"/>
+        <meta-data android:name="com.phonepe.android.sdk.isSimulator" android:value="true"/>
+        <meta-data android:name="com.phonepe.android.sdk.MerchantId" android:value="merchantId"/>
+        <meta-data android:name="com.phonepe.android.sdk.AppId" android:value="appId"/>
         <activity
             android:name=".AndroidCardview"
-            android:exported="false" />
-        <activity
-            android:name=".signin"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

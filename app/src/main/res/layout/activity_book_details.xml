@@ -141,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3.5"
             android:gravity="end"
-            android:text="8652691866"
+            android:text="@string/phone_no"
             android:textAlignment="viewEnd"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp" />
@@ -237,7 +237,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3.5"
             android:gravity="end"
-            android:text="2023/8/23"
+            android:text="2023/8/11"
             android:textAlignment="viewEnd"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp" />
@@ -269,7 +269,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3.5"
             android:gravity="end"
-            android:text="Fee Rs.1"
+            android:text="@string/fees"
             android:textAlignment="viewEnd"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp" />
